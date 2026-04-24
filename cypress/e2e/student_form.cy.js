@@ -14,6 +14,12 @@ describe('Student Practise Form - Final Task', () => {
       FormPage.emailField.type('JoDo@email.com'); //Set email
       FormPage.maleButton.click();                //Select male radio button
       FormPage.mobileField.type('00000000');      //Set mobile nr.
+
+      FormPage.dateField.click();                 //Select date field
+      FormPage.checkYear('1930');                 //Select year  - 1930
+      FormPage.checkMonth('February');            //Select month - February
+      FormPage.dateDay('28').click();             //Select date  - 28
+      FormPage.dateField.should('have.value','28 Feb 1930');
     });
     //--------------------------------------------------------------------------------------------------------------------------------------
   });

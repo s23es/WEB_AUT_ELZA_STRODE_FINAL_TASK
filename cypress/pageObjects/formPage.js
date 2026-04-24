@@ -26,4 +26,21 @@ export class FormPage extends BasePage{
         return cy.get('#userNumber');
     }
     //---------------------------------------------------------
+    static get dateField(){
+        return cy.get('#dateOfBirthInput');
+    }
+
+    static checkMonth(month){
+        return cy.get('.react-datepicker__month-select').select(month);
+    }
+
+    static checkYear(year){
+        return cy.get('.react-datepicker__year-select').select(year);
+    }
+
+    static dateDay(day){
+        //not(.react-datepicker__day--outside-month) avoids other month dates -> similar situation as MD2
+        return cy.get('.react-datepicker__day:not(.react-datepicker__day--outside-month)').contains(String(day));
+    }
+    //---------------------------------------------------------
 }
